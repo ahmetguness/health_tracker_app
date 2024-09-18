@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "pill_track",
-    "slug": "pill_track",
+    "name": "health_mate",
+    "slug": "health_mate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/default/icon.png",
