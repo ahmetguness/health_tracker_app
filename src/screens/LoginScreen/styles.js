@@ -32,6 +32,7 @@ export const styles = StyleSheet.create({
   textInput: {
     borderBottomWidth: 1,
     fontSize: 18,
+    borderColor: COLORS.primary,
   },
   inputInnerContainer: {
     marginBottom: "8%",

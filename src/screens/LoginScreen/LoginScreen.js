@@ -21,7 +21,7 @@ export default function LoginScreen() {
         </View>
         <View style={styles.inputInnerContainer}>
           <Text style={styles.title3}>Password</Text>
-          <TextInput style={styles.textInput} />
+          <TextInput style={styles.textInput} secureTextEntry={true} />
         </View>
         <LoginButton
           title={"Log In"}

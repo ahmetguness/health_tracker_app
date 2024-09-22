@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { TEXT } from "../../data/text";
 import { useSelector } from "react-redux";
 import Feather from "@expo/vector-icons/Feather";
+import ListCard from "../../components/cards/ListCard";
 
 export default function HomeScreen() {
   const currentLanguage = useSelector((state) => state.language.lan);
