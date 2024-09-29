@@ -35,8 +35,8 @@ export const styles = StyleSheet.create({
     marginTop: "3%",
   },
   managementContainer: {
-    width: "92%",
-    marginHorizontal: "4%",
+    width: "96%",
+    marginHorizontal: "2%",
     marginTop: "5%",
   },
   managementTitle: {
@@ -57,8 +57,8 @@ export const styles = StyleSheet.create({
     color: COLORS.white,
   },
   foodListContainer: {
-    width: "92%",
-    marginHorizontal: "4%",
+    width: "96%",
+    marginHorizontal: "2%",
     marginTop: "5%",
     marginBottom: "2%",
   },

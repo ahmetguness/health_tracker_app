@@ -57,51 +57,52 @@ const HomeScreen = () => {
           <Feather name="settings" size={24} color="black" />
         </TouchableOpacity>
       </View>
-
-      <View style={styles.calendarContainer}>
-        <Calendar
-          onDayPress={handleDayPress}
-          markedDates={{
-            [selectedDate]: {
-              selected: true,
-              marked: true,
-              selectedColor: COLORS.primary,
-            },
-          }}
-        />
-      </View>
-
-      <View style={styles.managementContainer}>
-        <Text style={styles.managementTitle}>Management:</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {renderManagementItem(Entypo, "list", "See Task List", () => {
-            console.log("Task list pressed");
-          })}
-        </ScrollView>
-      </View>
-
-      <View style={styles.foodListContainer}>
-        <Text style={styles.managementTitle}>Food List:</Text>
-        <View style={styles.foodCardContainer}>
-          <FoodCard mealTime="Breakfast" />
-          <FoodCard mealTime="Lunch" />
-          <FoodCard mealTime="Dinner" />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.calendarContainer}>
+          <Calendar
+            onDayPress={handleDayPress}
+            markedDates={{
+              [selectedDate]: {
+                selected: true,
+                marked: true,
+                selectedColor: COLORS.primary,
+              },
+            }}
+          />
         </View>
-      </View>
 
-      <Modal
-        visible={isModalVisible}
-        animationType="slide"
-        presentationStyle="pageSheet"
-        onRequestClose={() => setIsModalVisible(false)}
-      >
-        <View style={{ justifyContent: "space-between", flex: 1 }}>
-          <View style={styles.modalTitleContainer}>
-            <Text>{formattedDate}</Text>
+        <View style={styles.managementContainer}>
+          <Text style={styles.managementTitle}>Management:</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {renderManagementItem(Entypo, "list", "See Task List", () => {
+              console.log("Task list pressed");
+            })}
+          </ScrollView>
+        </View>
+
+        <View style={styles.foodListContainer}>
+          <Text style={styles.managementTitle}>Food List:</Text>
+          <View style={styles.foodCardContainer}>
+            <FoodCard mealTime="Breakfast" />
+            <FoodCard mealTime="Lunch" />
+            <FoodCard mealTime="Dinner" />
           </View>
-          <Button title="Close" onPress={() => setIsModalVisible(false)} />
         </View>
-      </Modal>
+
+        <Modal
+          visible={isModalVisible}
+          animationType="slide"
+          presentationStyle="pageSheet"
+          onRequestClose={() => setIsModalVisible(false)}
+        >
+          <View style={{ justifyContent: "space-between", flex: 1 }}>
+            <View style={styles.modalTitleContainer}>
+              <Text>{formattedDate}</Text>
+            </View>
+            <Button title="Close" onPress={() => setIsModalVisible(false)} />
+          </View>
+        </Modal>
+      </ScrollView>
     </View>
   );
 };
