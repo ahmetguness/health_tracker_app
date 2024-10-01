@@ -64,6 +64,17 @@ export const styles = StyleSheet.create({
   },
   foodCardContainer: {
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between", // More consistent spacing
+    paddingHorizontal: "2%", // Added horizontal padding for more uniform spacing on screen
+    marginTop: 10, // Added margin for spacing from the Food List title
+  },
+  totalCaloriesContainer: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  totalCaloriesText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: COLORS.darkGreen,
   },
 });

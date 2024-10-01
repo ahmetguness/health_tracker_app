@@ -1,21 +1,32 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
 import React from "react";
 import { COLORS } from "../../theme/colors";
 
-export default function FoodCard({ mealTime }) {
+export default function FoodCard({ mealTime, dataa }) {
   const data = [
     { foodName: "Apple", calori: 95 },
     { foodName: "Banana", calori: 105 },
     { foodName: "Orange", calori: 62 },
     { foodName: "Grapes", calori: 104 },
     { foodName: "Pineapple", calori: 50 },
+    { foodName: "Apple", calori: 95 },
+    { foodName: "Banana", calori: 105 },
+    { foodName: "Orange", calori: 62 },
   ];
+
+  const totalCalories = data.reduce((acc, item) => acc + item.calori, 0);
 
   const renderItem = ({ item }) => {
     return (
-      <View style={{ flex: 1 }}>
-        <Text style={styles.foodName}>{item.foodName}</Text>
-        <Text style={styles.caloriText}>{item.calori}</Text>
+      <View style={styles.renderItem}>
+        <View style={styles.hSc}>
+          <Text style={styles.foodName} numberOfLines={1}>
+            {item.foodName}
+          </Text>
+        </View>
+        <View style={styles.hSc}>
+          <Text style={styles.caloriText}>{item.calori} kcal</Text>
+        </View>
       </View>
     );
   };
@@ -30,6 +41,7 @@ export default function FoodCard({ mealTime }) {
           keyExtractor={(item, index) => index.toString()}
         />
       </View>
+      <Text style={styles.totalCaloriesText}>Total: {totalCalories} kcal</Text>
     </View>
   );
 }
@@ -41,23 +53,47 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 270,
     borderRadius: 15,
+    padding: 10,
   },
   mealTimeText: {
     color: COLORS.white,
-    marginVertical: "6%",
+    marginVertical: 10,
+    fontSize: 16,
+    fontWeight: "bold",
     borderBottomWidth: 1,
     borderBottomColor: COLORS.white,
+    textAlign: "center",
   },
   innerContiner: {
     width: "100%",
-    padding: "4%",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    paddingTop: 10,
+    justifyContent: "space-evenly",
+    flex: 1,
   },
   foodName: {
     color: COLORS.white,
+    fontSize: 14,
+    textAlign: "center",
   },
   caloriText: {
     color: COLORS.white,
+    fontSize: 12,
+    textAlign: "center",
+  },
+  totalCaloriesText: {
+    marginTop: 10,
+    color: COLORS.white,
+    fontWeight: "bold",
+    fontSize: 14,
+    textAlign: "center",
+  },
+  renderItem: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  hSc: {
+    width: "50%",
   },
 });
